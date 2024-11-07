@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h1 class="text-center display-3 py-5">Tasks completed</h1>
+
+      <ul class="list-group">
+        {% for task in tasks %}
+        <a class="list-group-item" href="{% url 'task_detail' task.id %}">
+            <header class="d-flex justify-content-between">
+                {% if task.important %}
+            <h1 class="fw-bold text-success">{{task.title}}</h1>
+            {% else %}
+            <h1 class="fw-bold">{{task.title}}</h1>
+             {% endif %}
+            </header>
+
+            <p>{{task.description}}</p>
+            <p>{{task.user.username}}</p>
+
+            <p>{{task.datecompleted|date:'M j y:i'}}</p>
+        </a>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</main>
+
+<!-- 
+<main class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h1 class="text-center display-3 py-5">Edit Completed Task</h1>
+
+      <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit" class="btn btn-primary">Update Task</button>
+      </form>
+
+      {% if error %}
+        <div class="alert alert-danger mt-3">
+          <strong>Error:</strong> {{ error }}
+        </div>
+      {% endif %}
+    </div>
+  </div> 
+</main> -->
+{% endblock %}

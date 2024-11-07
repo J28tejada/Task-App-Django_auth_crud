@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main class="container py-5">
+    <section class="card card-body">
+        <h1 class="display-1 text-center">Task App</h1>
+        <p>
+            This task management application is your personal assistant for organizing and tracking tasks simply and efficiently. You can create, edit, and mark tasks as completed, categorize them by importance, and keep a clear visual overview of your pending activities. Plus, it features a recycle bin where you can restore or permanently delete tasks you no longer need. With an intuitive, user-friendly interface, this app helps you stay focused on your goals and navigate your daily schedule without losing sight of your priorities.</p>
+
+        <div class="text-center">
+            <a class="btn btn-secondary" href="/signin/">
+                Signin
+            </a>
+            <a class="btn btn-dark" href="/signup/">
+                Signup
+            </a>
+        </div>
+    </section>
+</main>
+    
+<footer class="text-center mt-8">
+    <p>Created by: Josue Tejada | Using Django</p>
+</footer>
+
+{% endblock %}
